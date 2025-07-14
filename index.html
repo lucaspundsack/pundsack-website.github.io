@@ -13,7 +13,7 @@
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <!-- Vergrößertes Logo -->
       <div class="flex items-center">
-        <img src="logo.png" alt="Pundsack Logo" class="h-20 md:h-24" />
+        <img src="logo.png" alt="Pundsack Logo" class="h-16 md:h-20" />
       </div>
 
       <!-- Desktop Navigation -->
@@ -43,33 +43,7 @@
     </div>
   </header>
 
-  <!-- Carousel Section -->
-  <section class="py-16">
-    <div class="container mx-auto px-4">
-      <div class="relative">
-        <!-- Slides -->
-        <div class="w-full aspect-video">
-          <img id="current-image" src="bauteil2.jpg" alt="Bauteil 2" class="w-full h-full object-cover" />
-        </div>
-
-        <!-- Navigation -->
-        <div class="flex justify-center mt-4 space-x-4">
-          <button onclick="showPreviousImage()" class="p-2 rounded-full bg-gray-200 hover:bg-gray-300">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-            </svg>
-          </button>
-          <button onclick="showNextImage()" class="p-2 rounded-full bg-gray-200 hover:bg-gray-300">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Hero Section -->
+  <!-- Hero Section mit Karussell -->
   <section class="bg-gray-100 py-16">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -86,11 +60,23 @@
             <a href="#services" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-md transition-colors">Unsere Leistungen</a>
           </div>
         </div>
+        
+        <!-- Karussell -->
         <div class="relative">
-          <img src="bauteil3.jpg" alt="Industrielle Fertigung" class="rounded-lg shadow-lg w-full h-80 object-cover" />
-          <div class="absolute -bottom-6 -right-6 bg-blue-600 text-white p-4 rounded-md shadow-lg">
-            <p class="font-bold">Seit 1985</p>
-            <p>mit Leidenschaft für Präzision</p>
+          <div class="w-full aspect-video">
+            <img id="current-image" src="bauteil3.jpg" alt="Bauteil 3" class="w-full h-full object-cover rounded-lg shadow-lg" />
+          </div>
+          <div class="flex justify-center mt-4 space-x-4">
+            <button onclick="showPreviousImage()" class="p-2 rounded-full bg-gray-200 hover:bg-gray-300">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+            </button>
+            <button onclick="showNextImage()" class="p-2 rounded-full bg-gray-200 hover:bg-gray-300">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </button>
           </div>
         </div>
       </div>
@@ -324,7 +310,7 @@
               <div class="text-blue-600 mr-3 mt-1">
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M3 5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M16 2V6M8 2V6M3 10H21M5 19H19M12 14V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M16 2V6M8 2V6M3 10H21M5 19H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
               <div>
@@ -351,7 +337,7 @@
             <div class="flex items-start">
               <div class="text-blue-600 mr-3 mt-1">
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 8V12L15 15M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 8V12L15 15M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
               <div>
@@ -434,12 +420,12 @@
     
     function showNextImage() {
       currentImage = (currentImage + 1) % images.length;
-      document.getElementById('current-image').src = images[currentImage];
+      document.getElementById('carousel-image').src = images[currentImage];
     }
     
     function showPreviousImage() {
       currentImage = (currentImage - 1 + images.length) % images.length;
-      document.getElementById('current-image').src = images[currentImage];
+      document.getElementById('carousel-image').src = images[currentImage];
     }
   </script>
 </body>
