@@ -43,6 +43,32 @@
     </div>
   </header>
 
+  <!-- Carousel Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="relative">
+        <!-- Slides -->
+        <div class="w-full aspect-video">
+          <img id="current-image" src="bauteil2.jpg" alt="Bauteil 2" class="w-full h-full object-cover" />
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex justify-center mt-4 space-x-4">
+          <button onclick="showPreviousImage()" class="p-2 rounded-full bg-gray-200 hover:bg-gray-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+          <button onclick="showNextImage()" class="p-2 rounded-full bg-gray-200 hover:bg-gray-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Hero Section -->
   <section class="bg-gray-100 py-16">
     <div class="container mx-auto px-4">
@@ -237,37 +263,6 @@
                 Max. Blechstärke ST: 32 mm
               </li>
             </ul>
-          </div>
-        </div>
-
-        <!-- Bilderkarussell -->
-        <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm md:col-span-2">
-          <div class="relative">
-            <!-- Slides -->
-            <div class="w-full aspect-video">
-              <img id="current-image" src="bauteil2.jpg" alt="Bauteil 2" class="w-full h-full object-cover" />
-            </div>
-
-            <!-- Navigation -->
-            <div class="flex justify-center mt-4 space-x-4">
-              <button onclick="showPreviousImage()" class="p-2 rounded-full bg-gray-200 hover:bg-gray-300">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                </svg>
-              </button>
-              <button onclick="showNextImage()" class="p-2 rounded-full bg-gray-200 hover:bg-gray-300">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-gray-800 mb-3">Präzisionskomponenten</h3>
-            <p class="text-gray-600">
-              Individuelle Lösungen für komplexe Fertigungsanforderungen.
-            </p>
           </div>
         </div>
       </div>
