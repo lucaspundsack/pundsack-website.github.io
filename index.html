@@ -240,11 +240,31 @@
           </div>
         </div>
 
-        <!-- Neues Bauteil2 -->
+        <!-- Bilderkarussell -->
         <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm md:col-span-2">
-          <img src="bauteil2.jpg" alt="Bauteil 2" class="w-full h-64 object-cover" />
+          <div class="relative">
+            <!-- Slides -->
+            <div class="w-full aspect-video">
+              <img id="current-image" src="bauteil2.jpg" alt="Bauteil 2" class="w-full h-full object-cover" />
+            </div>
+
+            <!-- Navigation -->
+            <div class="flex justify-center mt-4 space-x-4">
+              <button onclick="showPreviousImage()" class="p-2 rounded-full bg-gray-200 hover:bg-gray-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </button>
+              <button onclick="showNextImage()" class="p-2 rounded-full bg-gray-200 hover:bg-gray-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
           <div class="p-6">
-            <h3 class="text-xl font-semibold text-gray-800 mb-3">Präzisionskomponente</h3>
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">Präzisionskomponenten</h3>
             <p class="text-gray-600">
               Individuelle Lösungen für komplexe Fertigungsanforderungen.
             </p>
@@ -410,6 +430,22 @@
         "M4 6h16M4 12h16M4 18h16" : 
         "M6 18L18 6M6 6l12 12");
     });
+  </script>
+
+  <!-- Carousel Script -->
+  <script>
+    let currentImage = 0;
+    const images = ['bauteil2.jpg', 'bauteil3.jpg'];
+    
+    function showNextImage() {
+      currentImage = (currentImage + 1) % images.length;
+      document.getElementById('current-image').src = images[currentImage];
+    }
+    
+    function showPreviousImage() {
+      currentImage = (currentImage - 1 + images.length) % images.length;
+      document.getElementById('current-image').src = images[currentImage];
+    }
   </script>
 </body>
 </html>
