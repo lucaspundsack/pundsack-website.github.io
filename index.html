@@ -182,9 +182,7 @@
           <p class="text-gray-600 mb-4">
             Individuelle Behälterlösungen aus hochwertigen Materialien.
           </p>
-          <div class="w-full aspect-[16/9]">
-            <img src="behaelter.jpg" alt="Behälter" class="w-full h-full object-contain mb-4" />
-          </div>
+          <img src="behaelter.jpg" alt="Behälter" class="w-full h-64 object-contain mb-4" />
           <p class="text-gray-600">
             Unsere Behälter werden mit präziser Technik und hoher Qualitätskontrolle gefertigt. 
             Durch moderne Fertigungsverfahren wie CNC-Bearbeitung und Laserschneidtechnik 
@@ -284,8 +282,22 @@
         </div>
         <!-- Dörries Karusseldrehmaschine -->
         <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm">
-          <div class="w-full aspect-video">
-            <img src="karusel1.jpg" alt="Dörries Karusseldrehmaschine" class="w-full h-full object-contain" />
+          <div class="relative">
+            <div class="w-full aspect-video">
+              <img id="carousel-image" src="karusel1.jpg" alt="Dörries Karusseldrehmaschine" class="w-full h-full object-contain" />
+            </div>
+            <div class="flex justify-center mt-2 space-x-2">
+              <button onclick="showPreviousCarouselImage()" class="p-1 rounded-full bg-gray-200 hover:bg-gray-300">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </button>
+              <button onclick="showNextCarouselImage()" class="p-1 rounded-full bg-gray-200 hover:bg-gray-300">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-semibold text-gray-800 mb-3">Dörries Karusseldrehmaschine</h3>
@@ -418,88 +430,4 @@
         </div>
         <div>
           <h3 class="text-lg font-semibold mb-4">Unternehmen</h3>
-          <ul class="space-y-2 text-gray-400">
-            <li><a href="#about" class="hover:text-blue-400 transition-colors">Über uns</a></li>
-            <li><a href="#" class="hover:text-blue-400 transition-colors">Jobs</a></li>
-            <li><a href="#" class="hover:text-blue-400 transition-colors">News</a></li>
-            <li><a href="#" class="hover:text-blue-400 transition-colors">Impressum</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-lg font-semibold mb-4">Leistungen</h3>
-          <ul class="space-y-2 text-gray-400">
-            <li><a href="#services" class="hover:text-blue-400 transition-colors">Konstruktion</a></li>
-            <li><a href="#services" class="hover:text-blue-400 transition-colors">Rohrleitungsbau</a></li>
-            <li><a href="#services" class="hover:text-blue-400 transition-colors">Behälterbau</a></li>
-            <li><a href="#machinery" class="hover:text-blue-400 transition-colors">Maschinenpark</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-lg font-semibold mb-4">Kontakt</h3>
-          <ul class="space-y-2 text-gray-400">
-            <li><a href="#contact" class="hover:text-blue-400 transition-colors">Direkt anfragen</a></li>
-            <li><a href="mailto:info@pundsack-maschinenbau.de" class="hover:text-blue-400 transition-colors">E-Mail schreiben</a></li>
-            <li><a href="tel:+4944457588" class="hover:text-blue-400 transition-colors">+49 4445 7588</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- JavaScript für das Bilderkarussell -->
-  <script>
-    // Bilder für das Hero-Karussell
-    const heroImages = [
-      "stahlbau.jpg",
-      "rohrleitung.jpg", // Beispielbild 2
-      "behaelter.jpg"     // Beispielbild 3
-    ];
-
-    let heroIndex = 0;
-
-    function showPreviousImage() {
-      heroIndex = (heroIndex - 1 + heroImages.length) % heroImages.length;
-      document.getElementById("current-image").src = heroImages[heroIndex];
-    }
-
-    function showNextImage() {
-      heroIndex = (heroIndex + 1) % heroImages.length;
-      document.getElementById("current-image").src = heroImages[heroIndex];
-    }
-
-    // Automatisches Sliden des Hero-Bildes (alle 5 Sekunden)
-    setInterval(showNextImage, 5000);
-
-    // Bilder für das Matec CNC Karussell
-    const cncImages = [
-      "frase.jpg",
-      "matec2.jpg", // Beispielbild 2
-      "matec3.jpg"  // Beispielbild 3
-    ];
-
-    let cncIndex = 0;
-
-    function showPreviousCNCImage() {
-      cncIndex = (cncIndex - 1 + cncImages.length) % cncImages.length;
-      document.getElementById("cnc-image").src = cncImages[cncIndex];
-    }
-
-    function showNextCNCImage() {
-      cncIndex = (cncIndex + 1) % cncImages.length;
-      document.getElementById("cnc-image").src = cncImages[cncIndex];
-    }
-
-    // Optional: Automatisches Sliden auch für das CNC-Karussell
-    // setInterval(showNextCNCImage, 6000); // Entfernen oder ein-/ausschalten nach Bedarf
-
-    // Mobile Menü-Funktion
-    const menuToggle = document.getElementById("menu-toggle");
-    const mobileMenu = document.getElementById("mobile-menu");
-
-    menuToggle.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
-  </script>
-
-</body>
-</html>
+          <ul class="space-y-2 text-gray-400
