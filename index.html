@@ -189,32 +189,11 @@
             Individuelle Behälterlösungen aus hochwertigen Materialien.
           </p>
           <img src="behaelter.jpg" alt="Behälter" class="w-full h-64 object-cover mb-4" />
-          <ul class="space-y-2 text-gray-600">
-            <li class="flex items-center">
-              <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              Stahl
-            </li>
-            <li class="flex items-center">
-              <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              Edelstahl
-            </li>
-            <li class="flex items-center">
-              <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              Hardox
-            </li>
-            <li class="flex items-center">
-              <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              Aluminium
-            </li>
-          </ul>
+          <p class="text-gray-600">
+            Unsere Behälter werden mit präziser Technik und hoher Qualitätskontrolle gefertigt. 
+            Durch moderne Fertigungsverfahren wie CNC-Bearbeitung und Laserschneidtechnik 
+            erreichen wir höchste Genauigkeit und Langzeitverlässlichkeit.
+          </p>
         </div>
       </div>
     </div>
@@ -450,4 +429,26 @@
 
     menuToggle.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
-      menuIcon.setAttribute('d', mobileMenu.classList.contains('hidden') ?
+      menuIcon.setAttribute('d', mobileMenu.classList.contains('hidden') ? 
+        "M4 6h16M4 12h16M4 18h16" : 
+        "M6 18L18 6M6 6l12 12");
+    });
+  </script>
+
+  <!-- Carousel Script -->
+  <script>
+    let currentImage = 0;
+    const images = ['bauteil2.jpg', 'bauteil3.jpg'];
+    
+    function showNextImage() {
+      currentImage = (currentImage + 1) % images.length;
+      document.getElementById('carousel-image').src = images[currentImage];
+    }
+    
+    function showPreviousImage() {
+      currentImage = (currentImage - 1 + images.length) % images.length;
+      document.getElementById('carousel-image').src = images[currentImage];
+    }
+  </script>
+</body>
+</html>
