@@ -331,8 +331,8 @@
             <div class="flex items-start">
               <div class="text-blue-600 mr-3 mt-1">
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M16 2V6M8 2V6M3 10H21M5 19H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M3 5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M16 2V6M8 2V6M3 10H21M5 19H19M12 14V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
               <div>
@@ -359,7 +359,7 @@
             <div class="flex items-start">
               <div class="text-blue-600 mr-3 mt-1">
                 <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 8V12L15 15M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 8V12L15 15M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
               <div>
@@ -422,6 +422,24 @@
     </div>
   </footer>
 
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white shadow-lg z-50">
+    <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row md:justify-between md:items-center">
+      <p class="mb-4 md:mb-0">
+        Es werden notwendige Cookies, Google Maps, YouTube und Google Analytics geladen. 
+        <a href="#contact" class="underline hover:text-blue-400">Details in unserer Datenschutzerklärung</a>.
+      </p>
+      <div class="flex space-x-4">
+        <button onclick="acceptCookies()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors">
+          Zustimmen
+        </button>
+        <button onclick="declineCookies()" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-md transition-colors">
+          Nicht Zustimmen
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Mobile Menu Script -->
   <script>
     const menuToggle = document.getElementById('menu-toggle');
@@ -450,6 +468,30 @@
       currentImage = (currentImage - 1 + images.length) % images.length;
       document.getElementById('current-image').src = images[currentImage];
     }
+  </script>
+
+  <!-- Cookie Script -->
+  <script>
+    const cookieBanner = document.getElementById('cookie-banner');
+
+    function acceptCookies() {
+      document.cookie = "cookies_accepted=true; path=/; max-age=" + (60 * 60 * 24 * 365); // 1 Jahr
+      cookieBanner.classList.add('hidden');
+      // Hier können Sie externe Skripte laden (z.B. Google Analytics)
+    }
+
+    function declineCookies() {
+      document.cookie = "cookies_accepted=false; path=/; max-age=" + (60 * 60 * 24 * 365); // 1 Jahr
+      cookieBanner.classList.add('hidden');
+    }
+
+    // Überprüfe Cookie-Einwilligung beim Laden
+    window.addEventListener('DOMContentLoaded', () => {
+      const cookie = document.cookie.includes('cookies_accepted=true');
+      if (cookie) {
+        cookieBanner.classList.add('hidden');
+      }
+    });
   </script>
 </body>
 </html>
