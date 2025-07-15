@@ -11,12 +11,12 @@
   <!-- Header -->
   <header class="bg-gray-900 text-white shadow-md">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-      <!-- Vergrößertes Logo -->
+      <!-- Logo -->
       <div class="flex items-center">
         <img src="logo.png" alt="Pundsack Logo" class="h-16 md:h-20" />
       </div>
 
-      <!-- Desktop Navigation -->
+      <!-- Navigation -->
       <nav class="hidden md:flex space-x-8">
         <a href="#about" class="hover:text-blue-400 transition-colors">Über uns</a>
         <a href="#services" class="hover:text-blue-400 transition-colors">Leistungen</a>
@@ -171,6 +171,48 @@
                 <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               Wartung und Instandhaltung
+            </li>
+          </ul>
+        </div>
+
+        <!-- Behälterbau (Neu) -->
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="text-blue-600 mb-4">
+            <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 11H4C2.89543 11 2 11.8954 2 13V21C2 22.1046 2.89543 23 4 23H20C21.1046 23 22 22.1046 22 21V13C22 11.8954 21.1046 11 20 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 21V13C16 11.8954 15.1046 11 14 11H10C8.89543 11 8 11.8954 8 13V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 7V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">Behälterbau</h3>
+          <p class="text-gray-600 mb-4">
+            Individuelle Behälterlösungen aus hochwertigen Materialien.
+          </p>
+          <img src="behaelter.jpg" alt="Behälter" class="w-full h-64 object-cover mb-4" />
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Stahl
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Edelstahl
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Hardox
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Aluminium
             </li>
           </ul>
         </div>
@@ -381,6 +423,7 @@
           <ul class="space-y-2 text-gray-400">
             <li><a href="#services" class="hover:text-blue-400 transition-colors">Konstruktion</a></li>
             <li><a href="#services" class="hover:text-blue-400 transition-colors">Rohrleitungsbau</a></li>
+            <li><a href="#services" class="hover:text-blue-400 transition-colors">Behälterbau</a></li>
             <li><a href="#machinery" class="hover:text-blue-400 transition-colors">Maschinenpark</a></li>
           </ul>
         </div>
@@ -407,26 +450,4 @@
 
     menuToggle.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
-      menuIcon.setAttribute('d', mobileMenu.classList.contains('hidden') ? 
-        "M4 6h16M4 12h16M4 18h16" : 
-        "M6 18L18 6M6 6l12 12");
-    });
-  </script>
-
-  <!-- Carousel Script -->
-  <script>
-    let currentImage = 0;
-    const images = ['bauteil2.jpg', 'bauteil3.jpg'];
-    
-    function showNextImage() {
-      currentImage = (currentImage + 1) % images.length;
-      document.getElementById('carousel-image').src = images[currentImage];
-    }
-    
-    function showPreviousImage() {
-      currentImage = (currentImage - 1 + images.length) % images.length;
-      document.getElementById('carousel-image').src = images[currentImage];
-    }
-  </script>
-</body>
-</html>
+      menuIcon.setAttribute('d', mobileMenu.classList.contains('hidden') ?
