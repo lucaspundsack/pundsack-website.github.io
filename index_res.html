@@ -3,330 +3,539 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pundsack GmbH</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    .bg-gray-50 { background-color: #f9fafb; }
-    .bg-white { background-color: #ffffff; }
-    .bg-blue-600 { background-color: #2563eb; }
-    .text-gray-800 { color: #1f2937; }
-    .text-gray-600 { color: #4b5563; }
-    .text-blue-600 { color: #2563eb; }
-    .shadow-sm { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); }
-    .rounded-lg { border-radius: 0.5rem; }
-    .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
-    .px-4 { padding-left: 1rem; padding-right: 1rem; }
-    .container { max-width: 1200px; margin: 0 auto; }
-    .max-w-3xl { max-width: 40rem; }
-    .text-center { text-align: center; }
-    .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
-    .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .gap-8 { gap: 2rem; }
-    .w-full { width: 100%; }
-    .aspect-video { aspect-ratio: 16 / 9; }
-    .object-contain { object-fit: contain; }
-    .p-6 { padding: 1.5rem; }
-    .text-xl { font-size: 1.25rem; }
-    .font-semibold { font-weight: 600; }
-    .space-y-2 > * { margin-top: 0.5rem; }
-    .flex { display: flex; }
-    .items-center { align-items: center; }
-    .justify-center { justify-content: center; }
-    .mt-2 { margin-top: 0.5rem; }
-    .space-x-2 > * + * { margin-left: 0.5rem; }
-    .p-1 { padding: 0.25rem; }
-    .hover\:bg-gray-300:hover { background-color: #e5e7eb; }
-    .transition-colors { transition: color 0.2s ease-in-out; }
-    .hidden { display: none; }
-    .md\:hidden { display: none; }
-    .md\:flex { display: flex; }
-  </style>
+  <title>Pundsack Maschinenbau-Mühlenbau GmbH</title>
+  <script src="https://cdn.tailwindcss.com "></script>
 </head>
-<body>
-
-<!-- Navigation -->
-<nav class="hidden md:flex space-x-8 p-4 bg-gray-800 text-white">
-  <a href="#about" class="hover:text-blue-400 transition-colors">Über uns</a>
-  <a href="#services" class="hover:text-blue-400 transition-colors">Leistungen</a>
-  <a href="#machinery" class="hover:text-blue-400 transition-colors">Maschinenpark</a>
-  <a href="#contact" class="hover:text-blue-400 transition-colors">Kontakt</a>
-</nav>
-
-<!-- Mobile Menu Button -->
-<button id="menu-toggle" class="md:hidden text-white focus:outline-none p-4 bg-gray-800">
-  Menü
-</button>
-
-<!-- Mobile Menu -->
-<div id="mobile-menu" class="hidden bg-gray-800 pb-4">
-  <div class="container mx-auto px-4 flex flex-col space-y-3">
-    <a href="#about" class="py-2 hover:text-blue-400 transition-colors">Über uns</a>
-    <a href="#services" class="py-2 hover:text-blue-400 transition-colors">Leistungen</a>
-    <a href="#machinery" class="py-2 hover:text-blue-400 transition-colors">Maschinenpark</a>
-    <a href="#contact" class="py-2 hover:text-blue-400 transition-colors">Kontakt</a>
-  </div>
-</div>
-
-<!-- Hero Section -->
-<section class="bg-blue-600 text-white py-16">
-  <div class="container mx-auto px-4 text-center">
-    <h1 class="text-4xl font-bold mb-4">Pundsack GmbH</h1>
-    <p class="text-lg max-w-2xl mx-auto">Präzision in der Fertigung seit Generationen.</p>
-  </div>
-</section>
-
-<!-- About Section -->
-<section id="about" class="py-16 bg-white">
-  <div class="container mx-auto px-4">
-    <div class="max-w-3xl mx-auto text-center mb-12">
-      <h2 class="text-3xl font-bold text-gray-800 mb-4">Über uns</h2>
-      <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-      <p class="text-gray-600 text-lg">Wir sind eine moderne Maschinenbaufirma mit langjähriger Erfahrung in der Industrie.</p>
+<body class="bg-white">
+  <!-- Header -->
+  <header class="bg-gray-900 text-white shadow-md">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <img src="logo.png" alt="Pundsack Logo" class="h-16 md:h-20" />
+      </div>
+      <!-- Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="#about" class="hover:text-blue-400 transition-colors">Über uns</a>
+        <a href="#services" class="hover:text-blue-400 transition-colors">Leistungen</a>
+        <a href="#machinery" class="hover:text-blue-400 transition-colors">Maschinenpark</a>
+        <a href="#contact" class="hover:text-blue-400 transition-colors">Kontakt</a>
+      </nav>
+      <!-- Mobile Menu Button -->
+      <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+        <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
     </div>
-    <!-- Inhalt ergänzen nach Bedarf -->
-  </div>
-</section>
-
-<!-- Services Section -->
-<section id="services" class="py-16 bg-gray-50">
-  <div class="container mx-auto px-4">
-    <div class="max-w-3xl mx-auto text-center mb-12">
-      <h2 class="text-3xl font-bold text-gray-800 mb-4">Unsere Leistungen</h2>
-      <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-      <p class="text-gray-600 text-lg">Wir bieten maßgeschneiderte Lösungen in der industriellen Fertigung und Konstruktion.</p>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-800 pb-4">
+      <div class="container mx-auto px-4 flex flex-col space-y-3">
+        <a href="#about" class="py-2 hover:text-blue-400 transition-colors">Über uns</a>
+        <a href="#services" class="py-2 hover:text-blue-400 transition-colors">Leistungen</a>
+        <a href="#machinery" class="py-2 hover:text-blue-400 transition-colors">Maschinenpark</a>
+        <a href="#contact" class="py-2 hover:text-blue-400 transition-colors">Kontakt</a>
+      </div>
     </div>
-    <!-- Inhalt ergänzen nach Bedarf -->
-  </div>
-</section>
-
-<!-- Machinery Section -->
-<section id="machinery" class="py-16 bg-white">
-  <div class="container mx-auto px-4">
-    <div class="max-w-3xl mx-auto text-center mb-12">
-      <h2 class="text-3xl font-bold text-gray-800 mb-4">Unser Maschinenpark</h2>
-      <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-      <p class="text-gray-600 text-lg">Mit modernsten Maschinen garantieren wir höchste Präzision und Effizienz bei der Fertigung.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="machines-container">
-      <!-- Beispiel-Maschine -->
-      <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm machine-card">
+  </header>
+  <!-- Hero Section mit Karussell -->
+  <section class="bg-gray-100 py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
+            Präzision in der Fertigung seit Generationen
+          </h2>
+          <p class="text-lg text-gray-600 mb-8">
+            Mit modernsten Maschinen und jahrelanger Erfahrung bieten wir Lösungen für komplexe 
+            Fertigungs- und Konstruktionsaufgaben in der Industrie.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-colors">Jetzt kontaktieren</a>
+            <a href="#services" class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-md transition-colors">Unsere Leistungen</a>
+          </div>
+        </div>
+        <!-- Karussell -->
         <div class="relative">
           <div class="w-full aspect-video">
-            <img src="matec_cnc.jpg" alt="Matec 5-Achs CNC Maschine" class="w-full h-full object-contain" />
+            <img id="current-image" src="stahlbau.jpg" alt="Stahlbau" class="w-full h-full object-cover rounded-lg shadow-lg" />
           </div>
-          <div class="flex justify-center mt-2 space-x-2">
-            <button onclick="showPreviousImage('matec')" class="p-1 rounded-full bg-gray-200 hover:bg-gray-300">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="flex justify-center mt-4 space-x-4">
+            <button onclick="showPreviousImage()" class="p-2 rounded-full bg-gray-200 hover:bg-gray-300">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
               </svg>
             </button>
-            <button onclick="showNextImage('matec')" class="p-1 rounded-full bg-gray-200 hover:bg-gray-300">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button onclick="showNextImage()" class="p-2 rounded-full bg-gray-200 hover:bg-gray-300">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
               </svg>
             </button>
           </div>
         </div>
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-gray-800 mb-3">Matec 5-Achs CNC Maschine</h3>
+      </div>
+    </div>
+  </section>
+  <!-- Leistungen -->
+  <section id="services" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Unsere Leistungen</h2>
+        <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
+        <p class="text-gray-600 text-lg">
+          Wir bieten maßgeschneiderte Lösungen in der industriellen Fertigung und Konstruktion.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Konstruktion -->
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="text-blue-600 mb-4">
+            <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 8L8 16M8 8L16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">Konstruktion</h3>
+          <p class="text-gray-600 mb-4">
+            Entwicklung und Planung individueller Lösungen für Ihre Anforderungen.
+          </p>
+          <img src="konstruktion.jpg" alt="Konstruktion Beispiel" class="w-full h-64 object-cover mb-4" />
           <ul class="space-y-2 text-gray-600">
             <li class="flex items-center">
               <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>Verfahrweg X/Y/Z: 2000 mm / 800 mm / 880 mm
+                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              CAD-Konstruktion
             </li>
             <li class="flex items-center">
               <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>800 mm Rundtisch
+                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              3D-Modellierung
             </li>
             <li class="flex items-center">
               <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>5-Achs Bearbeitung für komplexe Geometrien
+                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              FEM-Analyse
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Detaillierte Zeichnungen
             </li>
           </ul>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="py-16 bg-white">
-  <div class="container mx-auto px-4">
-    <div class="max-w-3xl mx-auto text-center mb-12">
-      <h2 class="text-3xl font-bold text-gray-800 mb-4">Kontakt</h2>
-      <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-      <p class="text-gray-600 text-lg">Haben Sie Fragen? Kontaktieren Sie uns gerne!</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- Kontaktformular -->
-      <div class="bg-white p-6 rounded-lg shadow-sm">
-        <h3 class="text-xl font-semibold text-gray-800 mb-6">Kontaktformular</h3>
-        <form onsubmit="event.preventDefault(); alert('Nachricht gesendet!');">
-          <div class="mb-4">
-            <label for="name" class="block text-gray-700 mb-2">Name</label>
-            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md" placeholder="Ihr Name" required />
-          </div>
-          <div class="mb-4">
-            <label for="email" class="block text-gray-700 mb-2">E-Mail</label>
-            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md" placeholder="Ihre E-Mail" required />
-          </div>
-          <div class="mb-4">
-            <label for="message" class="block text-gray-700 mb-2">Nachricht</label>
-            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md" placeholder="Ihre Nachricht" required></textarea>
-          </div>
-          <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md transition-colors">Nachricht senden</button>
-        </form>
-      </div>
-      <!-- Kontaktdaten -->
-      <div class="bg-white p-6 rounded-lg shadow-sm">
-        <h3 class="text-xl font-semibold text-gray-800 mb-6">Kontaktdaten</h3>
-        <div class="space-y-6">
-          <div class="flex items-start">
-            <div class="text-blue-600 mr-3 mt-1"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 12C13.1046 12 14 11.1046 14 10C14 8.89543 13.1046 8 12 8C10.8954 8 10 8.89543 10 10C10 11.1046 10.8954 12 12 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div><p class="font-medium text-gray-800">Adresse</p><p class="text-gray-600">Bonrechtern 103<br />49429 Visbek</p></div>
-          </div>
-          <div class="flex items-start">
-            <div class="text-blue-600 mr-3 mt-1"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2 3.9 2.9 2H4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div><p class="font-medium text-gray-800">Telefon</p><p class="text-gray-600">+49 123 456789</p></div>
-          </div>
-          <div class="flex items-start">
-            <div class="text-blue-600 mr-3 mt-1"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2 3.9 2.9 2H4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div><p class="font-medium text-gray-800">E-Mail</p><p class="text-gray-600">info@pundsack-maschinenbau.de</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="bg-gray-900 text-white py-12">
-  <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-      <div>
-        <h3 class="text-xl font-bold mb-4">Pundsack GmbH</h3>
-        <p class="text-gray-400">Präzision in der Fertigung seit Generationen</p>
-      </div>
-      <div>
-        <h3 class="text-lg font-semibold mb-4">Unternehmen</h3>
-        <ul class="space-y-2 text-gray-400">
-          <li><a href="#about" class="hover:text-blue-400">Über uns</a></li>
-          <li><a href="#services" class="hover:text-blue-400">Leistungen</a></li>
-          <li><a href="#machinery" class="hover:text-blue-400">Maschinenpark</a></li>
-          <li><a href="#contact" class="hover:text-blue-400">Kontakt</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-lg font-semibold mb-4">Kontakt</h3>
-        <ul class="space-y-2 text-gray-400">
-          <li>Bonrechtern 103</li>
-          <li>49429 Visbek</li>
-          <li>+49 123 456789</li>
-          <li>info@pundsack-maschinenbau.de</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-lg font-semibold mb-4">Öffnungszeiten</h3>
-        <ul class="space-y-2 text-gray-400">
-          <li>Montag–Donnerstag: 07:00–16:30</li>
-          <li>Freitag: 07:00–13:00</li>
-          <li>Samstag/Sonntag: Geschlossen</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script>
-  // Funktion zum Hinzufügen einer neuen Maschine
-  function addMachine(name, imageUrl, description, features) {
-    const container = document.getElementById('machines-container');
-    const machineCard = document.createElement('div');
-    machineCard.className = 'bg-gray-50 rounded-lg overflow-hidden shadow-sm machine-card';
-
-    machineCard.innerHTML = `
-      <div class="relative">
-        <div class="w-full aspect-video">
-          <img src="${imageUrl}" alt="${name}" class="w-full h-full object-contain" />
-        </div>
-        <div class="flex justify-center mt-2 space-x-2">
-          <button onclick="showPreviousImage('${name}')" class="p-1 rounded-full bg-gray-200 hover:bg-gray-300">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        <!-- Rohrleitungsbau -->
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="text-blue-600 mb-4">
+            <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 16L21 12M21 12L17 8M21 12H9M13 22V14M13 2V14M13 14L17 10M13 14L9 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-          </button>
-          <button onclick="showNextImage('${name}')" class="p-1 rounded-full bg-gray-200 hover:bg-gray-300">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div class="p-6">
-        <h3 class="text-xl font-semibold text-gray-800 mb-3">${name}</h3>
-        <ul class="space-y-2 text-gray-600">
-          ${features.map(feature => `
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">Rohrleitungsbau</h3>
+          <p class="text-gray-600 mb-4">
+            Komplettlösungen für Rohrleitungssysteme in verschiedenen Industrien.
+          </p>
+          <img src="rohrleitung.jpg" alt="Rohrleitungen" class="w-full h-64 object-cover mb-4" />
+          <ul class="space-y-2 text-gray-600">
             <li class="flex items-center">
               <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>${feature}
+                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Planung und Auslegung
             </li>
-          `).join('')}
-        </ul>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Fertigung und Montage
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Schweißarbeiten nach Norm
+            </li>
+            <li class="flex items-center">
+              <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Wartung und Instandhaltung
+            </li>
+          </ul>
+        </div>
+        <!-- Behälterbau -->
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="text-blue-600 mb-4">
+            <svg class="w-10 h-10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 11H4C2.89543 11 2 11.8954 2 13V21C2 22.1046 2.89543 23 4 23H20C21.1046 23 22 22.1046 22 21V13C22 11.8954 21.1046 11 20 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 21V13C16 11.8954 15.1046 11 14 11H10C8.89543 11 8 11.8954 8 13V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 7V4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 mb-3">Behälterbau</h3>
+          <p class="text-gray-600 mb-4">
+            Individuelle Behälterlösungen aus hochwertigen Materialien.
+          </p>
+          <img src="behaelter.jpg" alt="Behälter" class="w-full h-64 object-contain mb-4" />
+          <p class="text-gray-600">
+            Unsere Behälter werden mit präziser Technik und hoher Qualitätskontrolle gefertigt. 
+            Durch moderne Fertigungsverfahren wie CNC-Bearbeitung und Laserschneidtechnik 
+            erreichen wir höchste Genauigkeit und Langzeitverlässlichkeit.
+          </p>
+        </div>
       </div>
-    `;
+    </div>
+  </section>
+  <!-- Maschinenpark -->
+  <section id="machinery" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Unser Maschinenpark</h2>
+        <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
+        <p class="text-gray-600 text-lg">
+          Mit modernsten Maschinen garantieren wir höchste Präzision und Effizienz bei der Fertigung.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Matec 5-Achs CNC -->
+        <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm">
+          <div class="relative">
+            <div class="w-full aspect-video">
+              <img id="cnc-image" src="frase.jpg" alt="Matec 5-Achs CNC Maschine" class="w-full h-full object-contain" />
+            </div>
+            <div class="flex justify-center mt-2 space-x-2">
+              <button onclick="showPreviousCNCImage()" class="p-1 rounded-full bg-gray-200 hover:bg-gray-300">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </button>
+              <button onclick="showNextCNCImage()" class="p-1 rounded-full bg-gray-200 hover:bg-gray-300">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">Matec 5-Achs CNC Maschine</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Verfahrweg X/Y/Z: 2000 mm / 800 mm / 880 mm
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                800 mm Rundtisch
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                5-Achs Bearbeitung für komplexe Geometrien
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Trumpf Trulaser 3030 -->
+        <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm">
+          <img src="trulaser.jpg" alt="Trumpf Trulaser 3030" class="w-full h-64 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">Trumpf Trulaser 3030</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Laserschneidanlage mit höchster Präzision
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Tafelgröße: 3000 x 1500 mm
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Max. Blechstärke VA: 35 mm
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Max. Blechstärke ST: 32 mm
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Dörries Karusseldrehmaschine -->
+        <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm">
+          <div class="relative">
+            <div class="w-full aspect-video">
+              <img id="carousel-image" src="karusel1.jpg" alt="Dörries Karusseldrehmaschine" class="w-full h-full object-contain" />
+            </div>
+            <div class="flex justify-center mt-2 space-x-2">
+              <button onclick="showPreviousCarouselImage()" class="p-1 rounded-full bg-gray-200 hover:bg-gray-300">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </button>
+              <button onclick="showNextCarouselImage()" class="p-1 rounded-full bg-gray-200 hover:bg-gray-300">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">Dörries Karusseldrehmaschine</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Planscheibendurchmesser: 1250 mm
+              </li>
+              <li class="flex items-center">
+                <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Umlaufdurchmesser: 2100 mm
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Kontakt -->
+  <section id="contact" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">Kontaktieren Sie uns</h2>
+        <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
+        <p class="text-gray-600 text-lg">
+          Haben Sie Fragen zu unseren Leistungen oder möchten Sie ein Angebot erhalten?
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Kontaktformular -->
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-xl font-semibold text-gray-800 mb-6">Kontaktformular</h3>
+          <form onsubmit="event.preventDefault(); alert('Nachricht gesendet!');">
+            <div class="mb-4">
+              <label for="name" class="block text-gray-700 mb-2">Name</label>
+              <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md" placeholder="Ihr Name" required />
+            </div>
+            <div class="mb-4">
+              <label for="email" class="block text-gray-700 mb-2">E-Mail</label>
+              <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md" placeholder="Ihre E-Mail" required />
+            </div>
+            <div class="mb-4">
+              <label for="message" class="block text-gray-700 mb-2">Nachricht</label>
+              <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md" placeholder="Ihre Nachricht" required></textarea>
+            </div>
+            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md transition-colors">Nachricht senden</button>
+          </form>
+        </div>
+        <!-- Kontaktdaten -->
+        <div class="bg-white p-6 rounded-lg shadow-sm">
+          <h3 class="text-xl font-semibold text-gray-800 mb-6">Kontaktdaten</h3>
+          <div class="space-y-6">
+            <!-- Adresse -->
+            <div class="flex items-start">
+              <div class="text-blue-600 mr-3 mt-1">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 12C13.1046 12 14 11.1046 14 10C14 8.89543 13.1046 8 12 8C10.8954 8 10 8.89543 10 10C10 11.1046 10.8954 12 12 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <p class="font-medium text-gray-800">Adresse</p>
+                <p class="text-gray-600">Bonrechtern 103<br />49429 Visbek</p>
+              </div>
+            </div>
+            <!-- Telefon -->
+            <div class="flex items-start">
+              <div class="text-blue-600 mr-3 mt-1">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M16 2V6M8 2V6M3 10H21M5 19H19M12 14V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <p class="font-medium text-gray-800">Telefon</p>
+                <p class="text-gray-600">04445 7588</p>
+              </div>
+            </div>
+            <!-- E-Mail -->
+            <div class="flex items-start">
+              <div class="text-blue-600 mr-3 mt-1">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2 3.9 2.9 2H4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <p class="font-medium text-gray-800">E-Mail</p>
+                <p class="text-gray-600">info@pundsack-maschinenbau.de</p>
+              </div>
+            </div>
+            <!-- Öffnungszeiten -->
+            <div class="flex items-start">
+              <div class="text-blue-600 mr-3 mt-1">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 8V12L15 15M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <p class="font-medium text-gray-800">Öffnungszeiten</p>
+                <p class="text-gray-600">
+                  Montag: 07:00–16:30<br />
+                  Dienstag: 07:00–16:30<br />
+                  Mittwoch: 07:00–16:30<br />
+                  Donnerstag: 07:00–16:30<br />
+                  Freitag: 07:00–13:00<br />
+                  Samstag: Geschlossen<br />
+                  Sonntag: Geschlossen
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Pundsack GmbH</h3>
+          <p class="text-gray-400">Präzision in der Fertigung seit Generationen</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Unternehmen</h3>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="#about" class="hover:text-blue-400">Über uns</a></li>
+            <li><a href="#services" class="hover:text-blue-400">Leistungen</a></li>
+            <li><a href="#machinery" class="hover:text-blue-400">Maschinenpark</a></li>
+            <li><a href="#contact" class="hover:text-blue-400">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Kontakt</h3>
+          <ul class="space-y-2 text-gray-400">
+            <li>Visbek, Deutschland</li>
+            <li>+49 4445 7588</li>
+            <li><a href="mailto:info@pundsack-maschinenbau.de" class="hover:text-blue-400">info@pundsack-maschinenbau.de</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Folgen Sie uns</h3>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-400 hover:text-blue-400"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg></a>
+            <a href="#" class="text-gray-400 hover:text-blue-400"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-6 mt-8 text-center text-gray-400 text-sm">
+        &copy; 2023 Pundsack Maschinenbau-Mühlenbau GmbH. Alle Rechte vorbehalten.
+      </div>
+    </div>
+  </footer>
 
-    container.appendChild(machineCard);
-  }
+  <!-- JavaScript für das Bilderkarussell -->
+  <script>
+    // Globale Variablen zur Speicherung der aktuellen Bildindizes
+    let currentIndex = 0;
+    let cncIndex = 0;
+    let carouselIndex = 0;
 
-  // Beispielaufrufe zum Hinzufügen weiterer Maschinen
-  addMachine(
-    "Trumpf Trulaser 3030",
-    "trulaser.jpg",
-    "Laserschneidanlage mit höchster Präzision",
-    [
-      "Tafelgröße: 3000 x 1500 mm",
-      "Max. Blechstärke VA: 35 mm",
-      "Max. Blechstärke ST: 32 mm"
-    ]
-  );
+    const images = [
+      "stahlbau.jpg",
+      "konstruktion.jpg",
+      "rohrleitung.jpg",
+      "behaelter.jpg"
+    ];
 
-  addMachine(
-    "Dörries Karusseldrehmaschine",
-    "karusel1.jpg",
-    "Karusseldrehmaschine mit hoher Präzision",
-    [
-      "Planscheibendurchmesser: 1250 mm",
-      "Umlaufdurchmesser: 2100 mm"
-    ]
-  );
+    const cncImages = [
+      "matec_cnc.jpg",
+      "frase.jpg", // Beispiel für ein weiteres Bild
+      "frase2.jpg"  // Beispiel für ein weiteres Bild
+    ];
 
-  // Dummy-Bilder für Navigation
-  const imageIndex = {};
-  window.showPreviousImage = function(machineName) {
-    if (!imageIndex[machineName]) imageIndex[machineName] = 0;
-    imageIndex[machineName]--;
-    console.log(`Show previous image for ${machineName}`);
-  };
-  window.showNextImage = function(machineName) {
-    if (!imageIndex[machineName]) imageIndex[machineName] = 0;
-    imageIndex[machineName]++;
-    console.log(`Show next image for ${machineName}`);
-  };
+    const carouselImages = [
+      "karusel3.jpg",
+      "karusel2.jpg", // Beispiel für ein weiteres Bild
+      "karusel1.jpg"  // Beispiel für ein weiteres Bild
+    ];
 
-  // Mobile Menu Toggle
-  document.getElementById("menu-toggle").addEventListener("click", () => {
-    const menu = document.getElementById("mobile-menu");
-    menu.classList.toggle("hidden");
-  });
-</script>
+    function showImage(index) {
+      const imageElement = document.getElementById("current-image");
+      if (imageElement && index >= 0 && index < images.length) {
+        imageElement.src = images[index];
+      }
+    }
+
+    function showCNCImage(index) {
+      const imageElement = document.getElementById("cnc-image");
+      if (imageElement && index >= 0 && index < cncImages.length) {
+        imageElement.src = cncImages[index];
+      }
+    }
+
+    function showCarouselImage(index) {
+      const imageElement = document.getElementById("carousel-image");
+      if (imageElement && index >= 0 && index < carouselImages.length) {
+        imageElement.src = carouselImages[index];
+      }
+    }
+
+    function showPreviousImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }
+
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
+
+    function showPreviousCNCImage() {
+      cncIndex = (cncIndex - 1 + cncImages.length) % cncImages.length;
+      showCNCImage(cncIndex);
+    }
+
+    function showNextCNCImage() {
+      cncIndex = (cncIndex + 1) % cncImages.length;
+      showCNCImage(cncIndex);
+    }
+
+    function showPreviousCarouselImage() {
+      carouselIndex = (carouselIndex - 1 + carouselImages.length) % carouselImages.length;
+      showCarouselImage(carouselIndex);
+    }
+
+    function showNextCarouselImage() {
+      carouselIndex = (carouselIndex + 1) % carouselImages.length;
+      showCarouselImage(carouselIndex);
+    }
+
+    // Initialisierung des ersten Bildes
+    window.onload = () => {
+      showImage(currentIndex);
+      showCNCImage(cncIndex);
+      showCarouselImage(carouselIndex);
+    };
+  </script>
 </body>
-</html
+</html>
