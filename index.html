@@ -214,7 +214,23 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- Matec 5-Achs CNC -->
         <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm">
-          <img src="frase.jpg" alt="Matec 5-Achs CNC Maschine" class="w-full h-64 object-cover" />
+          <div class="relative">
+            <div class="w-full aspect-video">
+              <img id="current-image-matec" src="frase.jpg" alt="Matec 5-Achs CNC Maschine" class="w-full h-full object-cover rounded-lg shadow-lg" />
+            </div>
+            <div class="flex justify-center mt-4 space-x-4">
+              <button onclick="showPreviousImageMatec()" class="p-2 rounded-full bg-gray-200 hover:bg-gray-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+              </button>
+              <button onclick="showNextImageMatec()" class="p-2 rounded-full bg-gray-200 hover:bg-gray-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
           <div class="p-6">
             <h3 class="text-xl font-semibold text-gray-800 mb-3">Matec 5-Achs CNC Maschine</h3>
             <ul class="space-y-2 text-gray-600">
@@ -430,19 +446,4 @@
           </ul>
         </div>
         <div>
-          <h3 class="text-lg font-semibold mb-4">Kontakt</h3>
-          <ul class="space-y-2 text-gray-400">
-            <li><a href="tel:044457588" class="hover:text-blue-400 transition-colors">04445 7588</a></li>
-            <li><a href="mailto:info@pundsack-maschinenbau.de" class="hover:text-blue-400 transition-colors">info@pundsack-maschinenbau.de</a></li>
-            <li>Bonrechtern 103<br />49429 Visbek</li>
-          </ul>
-        </div>
-      </div>
-      <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-        <p>&copy; {new Date().getFullYear()} Pundsack Maschinenbau-Mühlenbau GmbH. Alle Rechte vorbehalten.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Cookie Banner -->
-  <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white shadow
+          <h3 class="text-lg font-semibold mb-4">Kontakt</h3
