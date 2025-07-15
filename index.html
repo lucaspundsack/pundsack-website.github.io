@@ -468,9 +468,9 @@
 
     // Bilder für das Matec CNC Karussell
     const cncImages = [
-      "frase.jpg",
-      "matec2.jpg", // Beispielbild 2
-      "matec3.jpg"  // Beispielbild 3
+      "matec_cnc.jpg",
+      "frase.jpg", // Beispielbild 2
+      "frase2.jpg"  // Beispielbild 3
     ];
 
     let cncIndex = 0;
@@ -486,7 +486,7 @@
     }
 
     // Optional: Automatisches Sliden auch für das CNC-Karussell
-    // setInterval(showNextCNCImage, 6000); // Entfernen oder ein-/ausschalten nach Bedarf
+    setInterval(showNextCNCImage, 6000); // Entfernen oder ein-/ausschalten nach Bedarf
 
     // Mobile Menü-Funktion
     const menuToggle = document.getElementById("menu-toggle");
