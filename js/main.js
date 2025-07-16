@@ -1,36 +1,40 @@
-// Globale Variablen zur Speicherung der aktuellen Bildindizes
-let currentIndex = 0;
-let cncIndex = 0;
-let carouselIndex = 0;
-let trulaserIndex = 0;
+// Globale Variablen zur Speicherung der aktuellen Bild-/Medienindizes
+let currentIndex = 0;       // Hauptkarussell (Hero Section)
+let cncIndex = 0;           // CNC-Maschine-Karussell
+let carouselIndex = 0;      // Dörries-Karussell
+let trulaserMediaIndex = 0; // Trumpf Trulaser-Media-Karussell
 
+// Arrays mit den Medien (Bilder und Video)
 const images = [
-  "images/stahlbau.jpg",
-  "images/konstruktion.jpg",
-  "images/rohrleitung.jpg",
-  "images/behaelter.jpg"
+  "stahlbau.jpg",
+  "konstruktion.jpg",
+  "rohrleitung.jpg",
+  "behaelter.jpg"
 ];
 
 const cncImages = [
-  "images/matec_cnc.jpg",
-  "images/frase.jpg", // Beispiel für ein weiteres Bild
-  "images/frase2.jpg"  // Beispiel für ein weiteres Bild
-];
-const trulaserMedia = [
-      { type: "image", src: "images/trulaser.jpg" },
-      { type: "video", src: "images/trulaser_video.mp4" }
+  "matec_cnc.jpg",
+  "frase.jpg", // Beispiel für ein weiteres Bild
+  "frase2.jpg" // Beispiel für ein weiteres Bild
 ];
 
 const carouselImages = [
-  "images/karusel3.jpg",
-  "images/karusel2.jpg", // Beispiel für ein weiteres Bild
-  "images/karusel1.jpg"  // Beispiel für ein weiteres Bild
+  "karusel3.jpg",
+  "karusel2.jpg", // Beispiel für ein weiteres Bild
+  "karusel1.jpg"  // Beispiel für ein weiteres Bild
 ];
 
-function showImage(index) {
-  const imageElement = document.getElementById("current-image");
-  if (imageElement && index >= 0 && index < images.length) {
-    imageElement.src = images[index];
+// Media für Trumpf Trulaser (Bild und Video)
+const trulaserMedia = [
+  { type: "image", src: "trulaser.jpg" },
+  { type: "video", src: "trulaser_video.mp4" }
+];
+
+// Funktionen zum Anzeigen der Bilder/Videos
+function showImage(index, elementId) {
+  const element = document.getElementById(elementId);
+  if (element && index >= 0 && index < images.length) {
+    element.src = images[index];
   }
 }
 
@@ -48,14 +52,38 @@ function showCarouselImage(index) {
   }
 }
 
+function showTrulaserMedia(index) {
+  const mediaContainer = document.getElementById("trulaser-media");
+  const imageElement = mediaContainer.querySelector("img");
+  const videoElement = mediaContainer.querySelector("video");
+
+  if (index >= 0 && index < trulaserMedia.length) {
+    const currentMedia = trulaserMedia[index];
+
+    // Verstecke alle Elemente
+    imageElement.classList.add("hidden");
+    videoElement.classList.add("hidden");
+
+    // Zeige das aktuelle Medium an
+    if (currentMedia.type === "image") {
+      imageElement.src = currentMedia.src;
+      imageElement.classList.remove("hidden");
+    } else if (currentMedia.type === "video") {
+      videoElement.src = currentMedia.src;
+      videoElement.classList.remove("hidden");
+    }
+  }
+}
+
+// Funktionen zum Wechseln der Bilder/Videos
 function showPreviousImage() {
   currentIndex = (currentIndex - 1 + images.length) % images.length;
-  showImage(currentIndex);
+  showImage(currentIndex, "current-image");
 }
 
 function showNextImage() {
   currentIndex = (currentIndex + 1) % images.length;
-  showImage(currentIndex);
+  showImage(currentIndex, "current-image");
 }
 
 function showPreviousCNCImage() {
@@ -78,52 +106,20 @@ function showNextCarouselImage() {
   showCarouselImage(carouselIndex);
 }
 
-// Initialisierung des ersten Bildes
-window.onload = () => {
-  showImage(currentIndex);
-  showCNCImage(cncIndex);
-  showCarouselImage(carouselIndex);
-};
-// Globale Variablen für Trumpf Trulaser Media
-let trulaserIndex = 0;
-const trulaserMedia = [
-  { type: "image", src: "images/trulaser.jpg" },
-  { type: "video", src: "images/trulaser_video.mp4" }
-];
-
-function showTrulaserMedia(index) {
-  const mediaContainer = document.getElementById("trulaser-media");
-  const imageElement = mediaContainer.querySelector("img");
-  const videoElement = mediaContainer.querySelector("video");
-
-  if (index >= 0 && index < trulaserMedia.length) {
-    // Zeige das aktuelle Medium an
-    if (trulaserMedia[index].type === "image") {
-      imageElement.src = trulaserMedia[index].src;
-      imageElement.classList.remove("hidden");
-      videoElement.classList.add("hidden");
-    } else if (trulaserMedia[index].type === "video") {
-      videoElement.src = trulaserMedia[index].src;
-      videoElement.classList.remove("hidden");
-      imageElement.classList.add("hidden");
-    }
-  }
-}
-
 function showPreviousTrulaserMedia() {
-  trulaserIndex = (trulaserIndex - 1 + trulaserMedia.length) % trulaserMedia.length;
-  showTrulaserMedia(trulaserIndex);
+  trulaserMediaIndex = (trulaserMediaIndex - 1 + trulaserMedia.length) % trulaserMedia.length;
+  showTrulaserMedia(trulaserMediaIndex);
 }
 
 function showNextTrulaserMedia() {
-  trulaserIndex = (trulaserIndex + 1) % trulaserMedia.length;
-  showTrulaserMedia(trulaserIndex);
+  trulaserMediaIndex = (trulaserMediaIndex + 1) % trulaserMedia.length;
+  showTrulaserMedia(trulaserMediaIndex);
 }
 
-// Initialisierung des ersten Mediums
+// Initialisierung bei Seitenstart
 window.onload = () => {
-  showImage(currentIndex);
+  showImage(currentIndex, "current-image");
   showCNCImage(cncIndex);
   showCarouselImage(carouselIndex);
-  showTrulaserMedia(trulaserIndex); // Hinzugefügt für Trumpf Trulaser
+  showTrulaserMedia(trulaserMediaIndex); // Initialisierung für Trumpf Trulaser
 };
