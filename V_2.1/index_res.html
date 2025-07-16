@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pundsack Maschinenbau-Mühlenbau GmbH</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.tailwindcss.com "></script>
 </head>
 <body class="bg-white">
   <!-- Header -->
@@ -12,7 +12,7 @@
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <!-- Logo -->
       <div class="flex items-center">
-        <img src="images/logo.png" alt="Pundsack Logo" class="h-16 md:h-20" />
+        <img src="logo.png" alt="Pundsack Logo" class="h-16 md:h-20" />
       </div>
       <!-- Navigation -->
       <nav class="hidden md:flex space-x-8">
@@ -58,7 +58,7 @@
         <!-- Karussell -->
         <div class="relative">
           <div class="w-full aspect-video">
-            <img id="current-image" src="images/stahlbau.jpg" alt="Stahlbau" class="w-full h-full object-cover rounded-lg shadow-lg" />
+            <img id="current-image" src="stahlbau.jpg" alt="Stahlbau" class="w-full h-full object-cover rounded-lg shadow-lg" />
           </div>
           <div class="flex justify-center mt-4 space-x-4">
             <button onclick="showPreviousImage()" class="p-2 rounded-full bg-gray-200 hover:bg-gray-300">
@@ -99,7 +99,7 @@
           <p class="text-gray-600 mb-4">
             Entwicklung und Planung individueller Lösungen für Ihre Anforderungen.
           </p>
-          <img src="images/konstruktion.jpg" alt="Konstruktion Beispiel" class="w-full h-64 object-cover mb-4" />
+          <img src="konstruktion.jpg" alt="Konstruktion Beispiel" class="w-full h-64 object-cover mb-4" />
           <ul class="space-y-2 text-gray-600">
             <li class="flex items-center">
               <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -138,7 +138,7 @@
           <p class="text-gray-600 mb-4">
             Komplettlösungen für Rohrleitungssysteme in verschiedenen Industrien.
           </p>
-          <img src="images/rohrleitung.jpg" alt="Rohrleitungen" class="w-full h-64 object-cover mb-4" />
+          <img src="rohrleitung.jpg" alt="Rohrleitungen" class="w-full h-64 object-cover mb-4" />
           <ul class="space-y-2 text-gray-600">
             <li class="flex items-center">
               <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -179,7 +179,7 @@
           <p class="text-gray-600 mb-4">
             Individuelle Behälterlösungen aus hochwertigen Materialien.
           </p>
-          <img src="images/behaelter.jpg" alt="Behälter" class="w-full h-64 object-contain mb-4" />
+          <img src="behaelter.jpg" alt="Behälter" class="w-full h-64 object-contain mb-4" />
           <p class="text-gray-600">
             Unsere Behälter werden mit präziser Technik und hoher Qualitätskontrolle gefertigt. 
             Durch moderne Fertigungsverfahren wie CNC-Bearbeitung und Laserschneidtechnik 
@@ -204,7 +204,7 @@
         <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm">
           <div class="relative">
             <div class="w-full aspect-video">
-              <img id="cnc-image" src="images/frase.jpg" alt="Matec 5-Achs CNC Maschine" class="w-full h-full object-contain" />
+              <img id="cnc-image" src="frase.jpg" alt="Matec 5-Achs CNC Maschine" class="w-full h-full object-contain" />
             </div>
             <div class="flex justify-center mt-2 space-x-2">
               <button onclick="showPreviousCNCImage()" class="p-1 rounded-full bg-gray-200 hover:bg-gray-300">
@@ -245,7 +245,7 @@
         </div>
         <!-- Trumpf Trulaser 3030 -->
         <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm">
-          <img src="images/trulaser.jpg" alt="Trumpf Trulaser 3030" class="w-full h-64 object-cover" />
+          <img src="trulaser.jpg" alt="Trumpf Trulaser 3030" class="w-full h-64 object-cover" />
           <div class="p-6">
             <h3 class="text-xl font-semibold text-gray-800 mb-3">Trumpf Trulaser 3030</h3>
             <ul class="space-y-2 text-gray-600">
@@ -280,7 +280,7 @@
         <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm">
           <div class="relative">
             <div class="w-full aspect-video">
-              <img id="carousel-image" src="images/karusel1.jpg" alt="Dörries Karusseldrehmaschine" class="w-full h-full object-contain" />
+              <img id="carousel-image" src="karusel1.jpg" alt="Dörries Karusseldrehmaschine" class="w-full h-full object-contain" />
             </div>
             <div class="flex justify-center mt-2 space-x-2">
               <button onclick="showPreviousCarouselImage()" class="p-1 rounded-full bg-gray-200 hover:bg-gray-300">
@@ -452,6 +452,90 @@
       </div>
     </div>
   </footer>
-  <script src="js/main.js"></script>
+
+  <!-- JavaScript für das Bilderkarussell -->
+  <script>
+    // Globale Variablen zur Speicherung der aktuellen Bildindizes
+    let currentIndex = 0;
+    let cncIndex = 0;
+    let carouselIndex = 0;
+
+    const images = [
+      "stahlbau.jpg",
+      "konstruktion.jpg",
+      "rohrleitung.jpg",
+      "behaelter.jpg"
+    ];
+
+    const cncImages = [
+      "matec_cnc.jpg",
+      "frase.jpg", // Beispiel für ein weiteres Bild
+      "frase2.jpg"  // Beispiel für ein weiteres Bild
+    ];
+
+    const carouselImages = [
+      "karusel3.jpg",
+      "karusel2.jpg", // Beispiel für ein weiteres Bild
+      "karusel1.jpg"  // Beispiel für ein weiteres Bild
+    ];
+
+    function showImage(index) {
+      const imageElement = document.getElementById("current-image");
+      if (imageElement && index >= 0 && index < images.length) {
+        imageElement.src = images[index];
+      }
+    }
+
+    function showCNCImage(index) {
+      const imageElement = document.getElementById("cnc-image");
+      if (imageElement && index >= 0 && index < cncImages.length) {
+        imageElement.src = cncImages[index];
+      }
+    }
+
+    function showCarouselImage(index) {
+      const imageElement = document.getElementById("carousel-image");
+      if (imageElement && index >= 0 && index < carouselImages.length) {
+        imageElement.src = carouselImages[index];
+      }
+    }
+
+    function showPreviousImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }
+
+    function showNextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
+
+    function showPreviousCNCImage() {
+      cncIndex = (cncIndex - 1 + cncImages.length) % cncImages.length;
+      showCNCImage(cncIndex);
+    }
+
+    function showNextCNCImage() {
+      cncIndex = (cncIndex + 1) % cncImages.length;
+      showCNCImage(cncIndex);
+    }
+
+    function showPreviousCarouselImage() {
+      carouselIndex = (carouselIndex - 1 + carouselImages.length) % carouselImages.length;
+      showCarouselImage(carouselIndex);
+    }
+
+    function showNextCarouselImage() {
+      carouselIndex = (carouselIndex + 1) % carouselImages.length;
+      showCarouselImage(carouselIndex);
+    }
+
+    // Initialisierung des ersten Bildes
+    window.onload = () => {
+      showImage(currentIndex);
+      showCNCImage(cncIndex);
+      showCarouselImage(carouselIndex);
+    };
+  </script>
 </body>
 </html>
