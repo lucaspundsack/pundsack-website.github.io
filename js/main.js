@@ -2,6 +2,7 @@
 let currentIndex = 0;
 let cncIndex = 0;
 let carouselIndex = 0;
+let trulaserIndex = 0;
 
 const images = [
   "images/stahlbau.jpg",
@@ -14,6 +15,10 @@ const cncImages = [
   "images/matec_cnc.jpg",
   "images/frase.jpg", // Beispiel für ein weiteres Bild
   "images/frase2.jpg"  // Beispiel für ein weiteres Bild
+];
+const trulaserMedia = [
+      { type: "image", src: "images/trulaser.jpg" },
+      { type: "video", src: "images/trulaser_video.mp4" }
 ];
 
 const carouselImages = [
@@ -82,7 +87,7 @@ window.onload = () => {
 // Globale Variablen für Trumpf Trulaser Media
 let trulaserIndex = 0;
 const trulaserMedia = [
-  { type: "image", src: "trulaser.jpg" },
+  { type: "image", src: "images/trulaser.jpg" },
   { type: "video", src: "images/trulaser_video.mp4" }
 ];
 
