@@ -245,38 +245,63 @@
             </ul>
           </div>
         </div>
-        <!-- Trumpf Trulaser 3030 -->
-        <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm">
-          <img src="images/trulaser.jpg" alt="Trumpf Trulaser 3030" class="w-full h-64 object-cover" />
-          <div class="p-6">
-            <h3 class="text-xl font-semibold text-gray-800 mb-3">Trumpf Trulaser 3030</h3>
-            <ul class="space-y-2 text-gray-600">
-              <li class="flex items-center">
-                <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Laserschneidanlage mit höchster Präzision
-              </li>
-              <li class="flex items-center">
-                <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Tafelgröße: 3000 x 1500 mm
-              </li>
-              <li class="flex items-center">
-                <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Max. Blechstärke VA: 35 mm
-              </li>
-              <li class="flex items-center">
-                <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                Max. Blechstärke ST: 32 mm
-              </li>
-            </ul>
-          </div>
+       <!-- Trumpf Trulaser 3030 -->
+<div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm">
+  <div class="relative">
+    <!-- Video oder Bild anzeigen -->
+    <div id="trulaser-media" class="w-full aspect-video">
+      <!-- Standard-Bild -->
+      <img src="trulaser.jpg" alt="Trumpf Trulaser 3030" class="w-full h-full object-cover hidden" />
+      <!-- Video -->
+      <video id="trulaser-video" controls class="w-full h-full object-contain hidden">
+        <source src="images/trulaser_video.mp4" type="video/mp4">
+        Dein Browser unterstützt kein Video-Tag.
+      </video>
+    </div>
+    <!-- Navigation für Karussell -->
+    <div class="flex justify-center mt-2 space-x-2">
+      <button onclick="showPreviousTrulaserMedia()" class="p-1 rounded-full bg-gray-200 hover:bg-gray-300">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      <button onclick="showNextTrulaserMedia()" class="p-1 rounded-full bg-gray-200 hover:bg-gray-300">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold text-gray-800 mb-3">Trumpf Trulaser 3030</h3>
+    <ul class="space-y-2 text-gray-600">
+      <li class="flex items-center">
+        <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Laserschneidanlage mit höchster Präzision
+      </li>
+      <li class="flex items-center">
+        <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Tafelgröße: 3000 x 1500 mm
+      </li>
+      <li class="flex items-center">
+        <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Max. Blechstärke VA: 35 mm
+      </li>
+      <li class="flex items-center">
+        <svg class="w-4 h-4 text-blue-600 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Max. Blechstärke ST: 32 mm
+      </li>
+    </ul>
+  </div>
+</div>
         </div>
         <!-- Dörries Karusseldrehmaschine -->
         <div class="bg-gray-50 rounded-lg overflow-hidden shadow-sm">
